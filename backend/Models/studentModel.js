@@ -8,7 +8,10 @@ const studentSchema = new mongoose.Schema({
        
     batch:Number,
     
-    collegeName:String
+    collegeName:String,
+    
+    gender:String
+
 });
 
 // Create the Student model
