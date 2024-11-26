@@ -28,14 +28,24 @@ router.get('/getstudentData', async (req, res)=>{
 
 router.delete('/delete/:id', async (req, res)=>{
     const id = req.params.id;
-    console.log(id);
     try {
         const udata = await studentModel.findByIdAndDelete(id);
         res.send('Data Deleted');
     } catch (error) {
         res.send(error);
     }
-   
-})
+});
+
+
+router.post('/getuser', async (req, res)=>{
+    const { id  } = req.body;
+    console.log(id);
+    try {
+        const udata = await studentModel.findById(id);
+        res.send(udata);
+    } catch (error) {
+        res.send(error);
+    }
+});
 
 module.exports = router;

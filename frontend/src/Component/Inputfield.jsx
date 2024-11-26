@@ -9,7 +9,7 @@ import axios from 'axios'
 
 
 
-function Inputfield() {
+function Inputfield({hide}) {
   
   const [nname, setNname]=useState("")
   const [rollno, setRollno]=useState("")
@@ -49,31 +49,37 @@ function Inputfield() {
 
   }
 
-  const  formsubmitFunction = async () =>
+  const  formsubmitFunction = async (e) =>{
+    e.preventDefault();
 
-   {
-        const senddata =await axios.post('http://localhost:3000/student/studentregister', studentData).then(response=>{
-          alert('Data Successfully Submited');
-        }).catch(error =>{
-          alert(error);
-        })
-  }
+    try {
+      const senddata =await axios.post('http://localhost:3000/student/studentregister', studentData).then(response=>{
+        alert('Data Successfully Submited');
+      }).catch(error =>{
+        alert(error);
+      })
+    } catch (error) {
+      
+    }}
+
+    
   
-
-
-
-
- 
+  
+    
 
   return (
      <>
+     {
+      hide && 
+     
       <div className='w-[30%] h-[800px] bg-green-950 flex justify-center items-center'>
       <form className='flex flex-col justify-center items-center gap-4 border border-green-800 rounded p-8' onSubmit={formsubmitFunction}>
         <input type='text' placeholder='Enter your name' className='w-[300px] h-12 rounded pl-5' onChange={nameFunction}/>
         <input type='text' placeholder='Enter your roll no' className='w-[300px] h-12 rounded pl-5' onChange={rollFunction}/>
-        <div className=' h-12 rounded flex flex-row gap-2 justify-center items-center bg-gray-100'>
-            <label className='ml-3'>Select Batch</label>
+        <div className=' h-12 rounded flex flex-row gap-2 justify-center items-center bg-transparent '>
+            <label className='ml-3 text-white'>Select Batch</label>
             <select className='w-[195px] bg-gray-100 font-bold' onChange={batchFunction} >
+              <option selected>Select</option>
               <option >2024</option>
               <option >2023</option>
               <option >2022</option>
@@ -85,11 +91,11 @@ function Inputfield() {
           <label>Select Gender :</label>
           <div className='flex flex-row gap-4'>
             <div className='flex flex-row gap-2'>
-                <input type='radio' name='gender' value={"male"} onChange={genderFunction}/>
+                <input type='radio' name='gender' value={"Male"} onChange={genderFunction}/>
                 <label>Male</label>
             </div>
             <div className='flex flex-row'>
-                <input type='radio' name='gender' value={"female"} onChange={genderFunction} />
+                <input type='radio' name='gender' value={"Female"} onChange={genderFunction} />
                 <label>Female</label>
             </div>
           </div>
@@ -100,7 +106,7 @@ function Inputfield() {
         <button type='submit' className='w-40 h-12 bg-yellow-500 rounded-md hover:bg-yellow-600' >Submit</button>
       </form>
     </div>
-
+  }
      </>
   )
 }
