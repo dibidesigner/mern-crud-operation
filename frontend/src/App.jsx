@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Crudoperation from './Component/Crudoperation'
 import Home from './Component/Home'
 import Navbar from './Component/Navbar'
+import Portfolio from './Component/Portfolio/Portfolio'
+import Aboutus from './Component/Aboutus/Aboutus'
+import Footer from './Component/Footer'
 
 function App() {
   return (
@@ -14,7 +17,10 @@ function App() {
        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/crudoperation" element={<Crudoperation />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/aboutus" element={<Aboutus />} />
        </Routes>
+       <Footer />
       </BrowserRouter>
     </>
   )
