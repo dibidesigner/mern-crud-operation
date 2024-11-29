@@ -7,6 +7,8 @@ function Inputfield() {
   const [batch, setBatch]=useState("")
   const [year, setYear]=useState("")
 
+  console.log(nname);
+
   const nameFunction = (e) =>{
      const name = e.target.value;
      setNname(name);
