@@ -3,6 +3,7 @@ const cors = require('cors');
 const studentControl = require('./Controls/studentControl');
 const dbconnection = require('./db'); // Ensure the path is correct
 
+
 const app = express();
 
 // Middleware setup
@@ -15,7 +16,11 @@ app.get('/', (req, res) => {
 });
 
 // Student routes
-app.use('/student', studentControl); // Mounting the student controller
+app.use('/student', studentControl);
+
+
+
+
 
 // Start the server
 const PORT = 3000; // Define a constant for the port

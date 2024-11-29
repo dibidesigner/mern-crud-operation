@@ -1,18 +1,21 @@
 import React from 'react'
-import Header from './Header';
-import Inputfield from './Inputfield';
-import StudentDetails from './StudentDetails';
+import '../assets/CSS/font.css'
+import Websitedesignservice from './Websitedesignservice';
+import Firstseondmix from './Firstseondmix';
+import Graphicservice from './Graphicservice';
+
+
 
 function Home() {
   return (
     <>
-    <Header />
-    <div className='w-screen flex flex-row'>
-          <Inputfield className="w-[30%] h-full"/>
-          <StudentDetails />
-    </div>
+      <Firstseondmix /> 
+      <Websitedesignservice  />
+      <Graphicservice />
+      
+      
     </>
   )
 }
 
-export default Home;
+export default Home
