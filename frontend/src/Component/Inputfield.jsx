@@ -80,7 +80,7 @@ function Inputfield({hide}) {
         <input type='text' placeholder='Enter your roll no' className='w-[300px] h-12 rounded pl-5' onChange={rollFunction}/>
         <div className=' h-12 rounded flex flex-row gap-2 justify-center items-center bg-transparent '>
             <label className='ml-3 text-white'>Select Batch</label>
-            <select className='w-[195px] bg-gray-100 font-bold' onChange={batchFunction} >
+            <select className='w-[195px] bg-gray-100 ' onChange={batchFunction} >
               <option selected>Select</option>
               <option >2024</option>
               <option >2023</option>

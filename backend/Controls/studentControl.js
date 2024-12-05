@@ -39,10 +39,10 @@ router.delete('/delete/:id', async (req, res)=>{
 
 router.post('/getuser', async (req, res)=>{
     const { id  } = req.body;
-    console.log(id);
+    
     try {
         const udata = await studentModel.findById(id);
-        res.send(udata);
+        res.json(udata);
     } catch (error) {
         res.send(error);
     }

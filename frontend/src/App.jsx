@@ -6,6 +6,7 @@ import Navbar from './Component/Navbar'
 import Portfolio from './Component/Portfolio/Portfolio'
 import Aboutus from './Component/Aboutus/Aboutus'
 import Footer from './Component/Footer'
+import Signup from './Component/Signup'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/crudoperation" element={<Crudoperation />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/signup" element={<Signup />} />
        </Routes>
        <Footer />
       </BrowserRouter>

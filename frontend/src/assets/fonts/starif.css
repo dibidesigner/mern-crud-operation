@@ -6,3 +6,12 @@
     font-display: swap;
 }
 
+.trochhi {
+    font-family: 'Trocchi';
+    src: url('./Trocchi.woff2') format('woff2');
+        
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
