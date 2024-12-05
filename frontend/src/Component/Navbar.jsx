@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/weblogo.png'
+
 import '../assets/CSS/font.css'
 
 function Header() {
@@ -9,7 +9,7 @@ function Header() {
     <>
        <section className='w-screen h-20 bg-[#090B27] flex justify-center items-center text-white text-[20px] login'>
                <Link to='/' className='lg:w-[20%] w-[40%] h-full flex justify-center items-center'>
-                <img src={logo} className='w-40 h-auto cursor-pointer'/>
+                Hi
                </Link>
                <div className='lg:w-[50%] w-[0%] h-full flex flex-row justify-center items-center xl:gap-24 lg:gap-16 lg:visible invisible'>
                   <Link to='/' className='cursor-pointer hover:text-[#A8E629]'>HOME</Link>
