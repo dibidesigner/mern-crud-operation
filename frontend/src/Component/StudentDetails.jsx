@@ -20,14 +20,14 @@ function StudentDetails({hideInputbox,hide}) {
     const data={
       "id":id
     }
-    const response = await axios.post(`http://localhost:3000/student/getuser`,data);
+    const response = await axios.post(`https://mern-crud-operation-47ne.vercel.app/student/getuser`,data);
     setUpdate(!update);
     setUpdateuser(response.data);
     
   }
 
   const getstudentData = async ()=>{
-    const response = await axios.get('http://localhost:3000/student/getstudentData');
+    const response = await axios.get('https://mern-crud-operation-47ne.vercel.app/student/getstudentData');
     setStudentdata(response.data);
     }
 
@@ -40,7 +40,7 @@ function StudentDetails({hideInputbox,hide}) {
 
   const deletedata= async (id)=>{
     
-      const response = await axios.delete(`http://localhost:3000/student/delete/${id}`)
+      const response = await axios.delete(`https://mern-crud-operation-47ne.vercel.app/student/delete/${id}`)
       getstudentData();
     }
 

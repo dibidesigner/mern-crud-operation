@@ -8,8 +8,9 @@ const app = express();
 
 // Middleware setup
 app.use(express.json()); // Parses incoming JSON requests
-app.use(cors()); // Enables Cross-Origin Resource Sharing
-
+app.use(cors({
+    origin: 'https://mern-crud-operation.vercel.app'
+}));
 // Root route
 app.get('/', (req, res) => {
     res.send('I am working');
