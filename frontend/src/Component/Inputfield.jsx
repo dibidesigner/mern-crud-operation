@@ -55,7 +55,7 @@ function Inputfield({hide}) {
     e.preventDefault();
 
     try {
-      const senddata =await axios.post('http://localhost:3000/student/studentregister', studentData).then(response=>{
+      const senddata =await axios.post('https://mern-crud-operation-47ne.vercel.app/student/studentregister', studentData).then(response=>{
         alert('Data Successfully Submited');
       }).catch(error =>{
         alert(error);
