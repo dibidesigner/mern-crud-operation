@@ -25,13 +25,13 @@ function Graphicservice() {
         <div className='w-screen h-full absolute flex justify-center items-end'>
            <div className='w-[90%] h-[500px]  mb-28 flex flex-row justify-evenly items-center'>
              <Graphicservicescard headcontent='Creative Logo 
-& Branding' pcontent='Unique logos and cohesive branding solutions, including business cards and letterheads, to establish a strong brand identity.'/>
+                                                & Branding' pcontent='Unique logos and cohesive branding solutions, including business cards and letterheads, to establish a strong brand identity.'/>
              <Graphicservicescard headcontent='Social Media 
-& Marketing Graphics' pcontent='Eye-catching designs for social media posts, banners, and digital campaigns to boost your online presence and engagement.'/>
+                                                & Marketing Graphics' pcontent='Eye-catching designs for social media posts, banners, and digital campaigns to boost your online presence and engagement.'/>
              <Graphicservicescard headcontent='Infographics 
-& Presentations' pcontent='Professionally designed visuals that simplify complex data and deliver impactful messages.'/>
+                                               & Presentations' pcontent='Professionally designed visuals that simplify complex data and deliver impactful messages.'/>
              <Graphicservicescard headcontent='Print & 
-Digital Materials' pcontent='High-quality designs for brochures, flyers, posters, and other marketing essentials to enhance your brand’s visibility.'/>
+                                               Digital Materials' pcontent='High-quality designs for brochures, flyers, posters, and other marketing essentials to enhance your brand’s visibility.'/>
            </div>
         </div>
     </div>

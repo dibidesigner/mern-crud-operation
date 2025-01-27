@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const studentControl = require('./Controls/studentControl');
 const dbconnection = require('./db'); // Ensure the path is correct
+const webserviceModel = require('./Models/studentModel')
+const userModel = require('./Models/userModel/userModel')
+const userReg = require('./Router/userRouter')
 
 
 const app = express();
@@ -9,7 +12,7 @@ const app = express();
 // Middleware setup
 app.use(express.json()); // Parses incoming JSON requests
 app.use(cors({
-    origin: 'https://mern-crud-operation.vercel.app'
+    
 }));
 // Root route
 app.get('/', (req, res) => {
@@ -18,13 +21,14 @@ app.get('/', (req, res) => {
 
 // Student routes
 app.use('/student', studentControl);
+app.use('/user', userReg);
 
 
 
 
 
 // Start the server
-const PORT = 3000; // Define a constant for the port
+const PORT = process.env.port // Define a constant for the port
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

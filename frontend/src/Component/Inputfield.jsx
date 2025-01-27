@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useSelector } from 'react-redux';
+
+const api_base_url = import.meta.env.VITE_API_URL;
 
 
 
@@ -9,7 +12,9 @@ import axios from 'axios'
 
 
 
-function Inputfield({hide}) {
+function Inputfield({hide}, getstudentData={getstudentData} ) {
+
+  const storeValue = useSelector((state)=>state.counterValue);
   
   const [nname, setNname]=useState("")
   const [rollno, setRollno]=useState("")
@@ -55,7 +60,9 @@ function Inputfield({hide}) {
     e.preventDefault();
 
     try {
-      const senddata =await axios.post('https://mern-crud-operation-47ne.vercel.app/student/studentregister', studentData).then(response=>{
+      const senddata =await axios.post(`${api_base_url}/student/studentregister`, studentData).then(response=>{
+        console.log(response.data);
+        
         alert('Data Successfully Submited');
       }).catch(error =>{
         alert(error);
@@ -73,9 +80,11 @@ function Inputfield({hide}) {
      <>
      {
       hide && 
-     
+      
       <div className='w-[30%] h-[800px] bg-green-950 flex justify-center items-center'>
-      <form className='flex flex-col justify-center items-center gap-4 border border-green-800 rounded p-8' onSubmit={formsubmitFunction}>
+        
+      <form className='flex flex-col justify-center items-center gap-4   rounded p-8' onSubmit={formsubmitFunction}>
+       
         <input type='text' placeholder='Enter your name' className='w-[300px] h-12 rounded pl-5' onChange={nameFunction}/>
         <input type='text' placeholder='Enter your roll no' className='w-[300px] h-12 rounded pl-5' onChange={rollFunction}/>
         <div className=' h-12 rounded flex flex-row gap-2 justify-center items-center bg-transparent '>

@@ -1,13 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import webdesign from '../assets/images/webdesign.png'
 import Contentcard from './Contentcard'
+import { useSelector } from 'react-redux'
 
 function Websitedesignservice() {
+  
 
-    
+  const [color, setColor]  = useState("");
+
+
+  const divcolour =useSelector((state)=>state.divcolour);
+
+  console.log('disstructuring', divcolour);
+
+  const checkColor = () =>{
+    if (divcolour == 'dark'){
+      setColor('bg-[#000957] ');
+    }else{
+      setColor('bg-[#A9C46C]  ');
+    }
+  }
+ 
+   
+  useEffect(()=>{
+    checkColor();
+  },[divcolour]);
+
+
+
+     
   return (
     <> 
-      <div className='w-screen h-[1000px] bg-[#054E21] flex mt-[1180px]  flex-col justify-center items-center relative '>
+      <div className={`w-screen h-[1000px] flex mt-[1180px] ${color} flex-col justify-center items-center relative`}>
             <div className='w-full h-1/2 flex flex-row '>
                 <div className=' w-[40%] h-full flex justify-end items-center pr-10'>
                     <img src={webdesign} className='w-[500px] h-auto'/>

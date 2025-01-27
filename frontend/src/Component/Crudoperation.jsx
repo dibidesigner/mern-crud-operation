@@ -21,7 +21,7 @@ function Home() {
     
     <div className='w-screen flex flex-row'>
           <Inputfield hide={hide}/>
-          <StudentDetails hideInputbox={hideInputbox} hide={hide}/>
+          <StudentDetails hideInputbox={hideInputbox}  hide={hide}/>
     </div>
     </>
   )

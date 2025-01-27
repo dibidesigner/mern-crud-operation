@@ -7,6 +7,7 @@ import Portfolio from './Component/Portfolio/Portfolio'
 import Aboutus from './Component/Aboutus/Aboutus'
 import Footer from './Component/Footer'
 import Signup from './Component/Signup'
+import Login from './Component/Login'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
        </Routes>
        <Footer />
       </BrowserRouter>

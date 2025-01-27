@@ -7,9 +7,17 @@ import latesttext from '../assets/images/latesttext.png'
 import graphicpostimage from '../assets/images/Graphicpost.png'
 import websitepostimage from '../assets/images/websitepost.png'
 
+import { gsap } from "gsap";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 function Work() {
 
+  gsap.to('#newid', {
+    ScrollTrigger: '#newid', 
+    x:200
 
+  });
   
 
   return (
@@ -25,7 +33,7 @@ function Work() {
         <div className="absolute top-0 left-0 w-full h-[600px] flex flex-col items-center justify-center  text-white text-3xl font-bold">
             <div className="relative w-[800px] h-auto">
               
-                <img src={secondroundshape} alt="Second Shape" className="w-full h-auto" />
+                <img src={secondroundshape} alt="Second Shape" className="w-full h-auto" id='newid'/>
 
                 
                 <div className="absolute top-[250px] left-1/4">

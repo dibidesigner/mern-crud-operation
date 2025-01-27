@@ -1,15 +1,31 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import logoimage from '../assets/images/weblogo.png'
 
 import '../assets/CSS/font.css'
 
+import { useSelector, useDispatch } from 'react-redux'
+
+
+
 function Header() {
 
+  const dispatch = useDispatch();
+
+   const changeC = () =>{
+    dispatch({ type : 'light'});
+   }
+
+  
+
+
   return (
+
+    
     <>
        <section className='w-screen h-20 bg-[#090B27] flex justify-center items-center text-white text-[20px] login'>
                <Link to='/' className='lg:w-[20%] w-[40%] h-full flex justify-center items-center'>
-                Logo
+                 <img src={logoimage} />
                </Link>
                <div className='lg:w-[50%] w-[0%] h-full flex flex-row justify-center items-center xl:gap-24 lg:gap-16 lg:visible invisible'>
                   <Link to='/' className='cursor-pointer hover:text-[#A8E629]'>HOME</Link>
@@ -30,10 +46,12 @@ function Header() {
                          <div className='mr-3'>
                            <Link to='/signup' className='cursor-pointer login text-[#A8E629] active:text-green-600'>Sign Up</Link>
                          </div>
-                         <div className='w-32 h-10 bg-[#A8E629] hover:bg-[#96c733] rounded-full flex justify-center items-center cursor-pointer'>
-                          <h1 className='text-black login'>Login</h1>
-                         </div>
+                         <Link to='/login' className='w-32 h-10 bg-[#A8E629] hover:bg-[#96c733] rounded-full flex justify-center items-center cursor-pointer'>
+                          <Link to='/login' className='text-black login'>Login</Link>
+                         </Link>
+                         
                    </div>
+                  
                </div>
               
        </section>
